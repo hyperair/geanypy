@@ -18,6 +18,7 @@ LexerStyle_dealloc(LexerStyle *self)
 static int
 LexerStyle_init(LexerStyle *self, PyObject *args, PyObject *kwds)
 {
+	(void)args; (void)kwds;
 	self->lexer_style = NULL;
 	return 0;
 }
@@ -106,6 +107,7 @@ static PyTypeObject LexerStyleType = {
 static PyObject *
 Highlighting_get_style(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	gint ft_id, style_id;
 	LexerStyle *lexer_style;
 	const GeanyLexerStyle *ls;
@@ -129,6 +131,7 @@ Highlighting_get_style(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 Highlighting_is_code_style(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	gint lexer, style;
 	static gchar *kwlist[] = { "lexer", "style", NULL };
 
@@ -147,6 +150,7 @@ Highlighting_is_code_style(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 Highlighting_is_comment_style(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	gint lexer, style;
 	static gchar *kwlist[] = { "lexer", "style", NULL };
 
@@ -165,6 +169,7 @@ Highlighting_is_comment_style(PyObject *module, PyObject *args, PyObject *kwargs
 static PyObject *
 Highlighting_is_string_style(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	gint lexer, style;
 	static gchar *kwlist[] = { "lexer", "style", NULL };
 
@@ -183,6 +188,7 @@ Highlighting_is_string_style(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 Highlighting_set_styles(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	PyObject *py_sci, *py_ft;
 	Scintilla *sci;
 	Filetype *ft;

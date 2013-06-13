@@ -43,6 +43,7 @@ extern "C" {
 #define GEANYPY_PROPS_READONLY(cls) \
 	static int \
 	cls ## _set_property(cls *self, PyObject *value, const gchar *prop_name) { \
+		(void)self; (void)value; (void)prop_name; \
 		PyErr_SetString(PyExc_AttributeError, "can't set attribute"); \
 		return -1; }
 

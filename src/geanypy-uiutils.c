@@ -29,6 +29,7 @@ static PyTypeObject *PyGObject_Type = NULL;
 static PyObject *
 UiUtils_hookup_widget(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	PyObject *py_owner = NULL, *py_widget = NULL;
 	const gchar *widget_name = NULL;
 	GObject *owner = NULL, *widget = NULL;
@@ -51,6 +52,7 @@ UiUtils_hookup_widget(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 UiUtils_lookup_widget(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	PyObject *py_widget = NULL;
 	const gchar *widget_name = NULL;
 	GObject *widget = NULL;
@@ -75,6 +77,7 @@ UiUtils_lookup_widget(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 UiUtils_add_document_sensitive(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	PyObject *py_widget = NULL;
 	GObject *widget = NULL;
 	static gchar *kwlist[] = { "widget", NULL };
@@ -94,6 +97,7 @@ UiUtils_add_document_sensitive(PyObject *module, PyObject *args, PyObject *kwarg
 static PyObject *
 UiUtils_button_new_with_image(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	const gchar *stock_id = NULL, *text = NULL;
 	GtkWidget *button = NULL;
 	static gchar *kwlist[] = { "stock_id", "text", NULL };
@@ -112,6 +116,7 @@ UiUtils_button_new_with_image(PyObject *module, PyObject *args, PyObject *kwargs
 static PyObject *
 UiUtils_combo_box_add_to_history(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	PyObject *py_cbo = NULL;
 	const gchar *text = NULL;
 	gint hist_len = 0;
@@ -134,6 +139,7 @@ UiUtils_combo_box_add_to_history(PyObject *module, PyObject *args, PyObject *kwa
 static PyObject *
 UiUtils_dialog_vbox_new(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	PyObject *py_dlg;
 	GObject *dlg;
 	GtkWidget *widget;
@@ -156,6 +162,7 @@ UiUtils_dialog_vbox_new(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 UiUtils_entry_add_clear_icon(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	PyObject *py_ent = NULL;
 	GObject *ent;
 	static gchar *kwlist[] = { "entry", NULL };
@@ -175,6 +182,7 @@ UiUtils_entry_add_clear_icon(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 UiUtils_frame_new_with_alignment(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	const gchar *text = NULL;
 	static gchar *kwlist[] = { "label_text", NULL };
 	GtkWidget *alignment = NULL, *frame = NULL;
@@ -198,6 +206,7 @@ UiUtils_frame_new_with_alignment(PyObject *module, PyObject *args, PyObject *kwa
 static PyObject *
 UiUtils_get_gtk_settings_integer(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	const gchar *prop_name = NULL;
 	gint default_value = 0;
 	static gchar *kwlist[] = { "property_name", "default_value", NULL };
@@ -216,6 +225,7 @@ UiUtils_get_gtk_settings_integer(PyObject *module, PyObject *args, PyObject *kwa
 static PyObject *
 UiUtils_image_menu_item_new(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	const gchar *stock_id = NULL, *label = NULL;
 	GtkWidget *ret = NULL;
 	static gchar *kwlist[] = { "stock_id", "label", NULL };
@@ -235,6 +245,7 @@ UiUtils_image_menu_item_new(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 UiUtils_is_keyval_enter_or_return(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	guint kv;
 	static gchar *kwlist[] = { "keyval", NULL };
 
@@ -258,6 +269,7 @@ UiUtils_is_keyval_enter_or_return(PyObject *module, PyObject *args, PyObject *kw
  static PyObject *
  UiUtils_path_box_new(PyObject *module, PyObject *args, PyObject *kwargs)
  {
+	 (void)module;
 	 gint act;
 	 PyObject *py_ent = NULL;
 	 GObject *ent = NULL;
@@ -284,6 +296,7 @@ UiUtils_is_keyval_enter_or_return(PyObject *module, PyObject *args, PyObject *kw
  static PyObject *
  UiUtils_progress_bar_start(PyObject *module, PyObject *args, PyObject *kwargs)
  {
+	 (void)module;
 	 const gchar *text = NULL;
 	 static gchar *kwlist[] = { "text", NULL };
 
@@ -297,6 +310,7 @@ UiUtils_is_keyval_enter_or_return(PyObject *module, PyObject *args, PyObject *kw
  static PyObject *
  UiUtils_progress_bar_stop(PyObject *module)
  {
+	 (void)module;
 	 ui_progress_bar_stop();
 	 Py_RETURN_NONE;
  }
@@ -305,6 +319,7 @@ UiUtils_is_keyval_enter_or_return(PyObject *module, PyObject *args, PyObject *kw
  static PyObject *
  UiUtils_set_statusbar(PyObject *module, PyObject *args, PyObject *kwargs)
  {
+	 (void)module;
 	 gint log = 0;
 	 const gchar *text = NULL;
 	 static gchar *kwlist[] = { "text", "log", NULL };
@@ -323,6 +338,7 @@ UiUtils_is_keyval_enter_or_return(PyObject *module, PyObject *args, PyObject *kw
 static PyObject *
 UiUtils_widget_modify_font_from_string(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	PyObject *py_widget = NULL;
 	GObject *widget = NULL;
 	const gchar *font_str = NULL;

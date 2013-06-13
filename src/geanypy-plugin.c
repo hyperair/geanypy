@@ -233,6 +233,7 @@ GeanyPy_show_manager(void)
 static void
 on_python_plugin_loader_activate(GtkMenuItem *item, gpointer user_data)
 {
+	(void)item; (void)user_data;
     GeanyPy_show_manager();
 }
 
@@ -240,6 +241,7 @@ on_python_plugin_loader_activate(GtkMenuItem *item, gpointer user_data)
 G_MODULE_EXPORT void
 plugin_init(GeanyData *data)
 {
+	(void)data;
     GeanyPy_start_interpreter();
     signal_manager = signal_manager_new(geany_plugin);
 

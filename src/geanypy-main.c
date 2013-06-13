@@ -4,6 +4,7 @@
 static PyObject *
 Main_is_realized(PyObject *module)
 {
+	(void)module;
 	if (main_is_realized())
 		Py_RETURN_TRUE;
 	else
@@ -14,6 +15,7 @@ Main_is_realized(PyObject *module)
 static PyObject *
 Main_locale_init(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	gchar *locale_dir = NULL, *package = NULL;
 	static gchar *kwlist[] = { "locale_dir", "gettext_package", NULL };
 
@@ -30,6 +32,7 @@ Main_locale_init(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 Main_reload_configuration(PyObject *module)
 {
+	(void)module;
 	main_reload_configuration();
 	Py_RETURN_NONE;
 }

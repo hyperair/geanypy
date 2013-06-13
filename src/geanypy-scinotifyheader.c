@@ -11,6 +11,7 @@ NotifyHeader_dealloc(NotifyHeader *self)
 static int
 NotifyHeader_init(NotifyHeader *self, PyObject *args, PyObject *kwds)
 {
+	(void)args; (void)kwds;
 	self->notif = NULL;
 	return 0;
 }

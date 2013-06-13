@@ -11,6 +11,7 @@ IndentPrefs_dealloc(IndentPrefs *self)
 static int
 IndentPrefs_init(IndentPrefs *self, PyObject *args, PyObject *kwds)
 {
+	(void)args; (void)kwds;
 	self->indent_prefs = NULL;
 	return 0;
 }

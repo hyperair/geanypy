@@ -104,12 +104,14 @@ static void signal_manager_connect_signals(SignalManager *man)
 
 static void on_build_start(GObject *geany_object, SignalManager *man)
 {
+	(void)geany_object;
 	g_signal_emit_by_name(man->obj, "build-start");
 }
 
 
 static void on_document_event(GObject *geany_object, GeanyDocument *doc, SignalManager *man, const gchar *signal_name)
 {
+	(void)geany_object;
 	PyObject *py_doc = (PyObject *) Document_create_new_from_geany_document(doc);
 	g_signal_emit_by_name(man->obj, signal_name, py_doc);
 	Py_XDECREF(py_doc);
@@ -136,6 +138,7 @@ static void on_document_close(GObject *geany_object, GeanyDocument *doc, SignalM
 
 static void on_document_filetype_set(GObject *geany_object, GeanyDocument *doc, GeanyFiletype *filetype_old, SignalManager *man)
 {
+	(void)geany_object;
 	PyObject *py_doc, *py_ft;
 	py_doc = (PyObject *) Document_create_new_from_geany_document(doc);
 	py_ft = (PyObject *) Filetype_create_new_from_geany_filetype(filetype_old);
@@ -171,6 +174,7 @@ static void on_document_save(GObject *geany_object, GeanyDocument *doc, SignalMa
 
 static gboolean on_editor_notify(GObject *geany_object, GeanyEditor *editor, SCNotification *nt, SignalManager *man)
 {
+	(void)geany_object;
 	gboolean res = FALSE;
 	PyObject *py_ed, *py_notif;
 	py_ed = (PyObject *) Editor_create_new_from_geany_editor(editor);
@@ -184,18 +188,21 @@ static gboolean on_editor_notify(GObject *geany_object, GeanyEditor *editor, SCN
 
 static void on_geany_startup_complete(GObject *geany_object, SignalManager *man)
 {
+	(void)geany_object;
 	g_signal_emit_by_name(man->obj, "geany-startup-complete");
 }
 
 
 static void on_project_close(GObject *geany_object, SignalManager *man)
 {
+	(void)geany_object;
 	g_signal_emit_by_name(man->obj, "project-close");
 }
 
 
 static void on_project_dialog_confirmed(GObject *geany_object, GtkWidget *notebook, SignalManager *man)
 {
+	(void)geany_object;
 	PyObject *gob = (PyObject *) pygobject_new(G_OBJECT(notebook));
 	g_signal_emit_by_name(man->obj, "project-dialog-confirmed", gob);
 	Py_XDECREF(gob);
@@ -204,6 +211,7 @@ static void on_project_dialog_confirmed(GObject *geany_object, GtkWidget *notebo
 
 static void on_project_dialog_open(GObject *geany_object, GtkWidget *notebook, SignalManager *man)
 {
+	(void)geany_object;
 	PyObject *gob = (PyObject *) pygobject_new(G_OBJECT(notebook));
 	g_signal_emit_by_name(man->obj, "project-dialog-open", gob);
 	Py_XDECREF(gob);
@@ -211,6 +219,7 @@ static void on_project_dialog_open(GObject *geany_object, GtkWidget *notebook, S
 
 static void on_project_dialog_close(GObject *geany_object, GtkWidget *notebook, SignalManager *man)
 {
+	(void)geany_object;
 	PyObject *gob = (PyObject *) pygobject_new(G_OBJECT(notebook));
 	g_signal_emit_by_name(man->obj, "project-dialog-close", gob);
 	Py_XDECREF(gob);
@@ -219,6 +228,7 @@ static void on_project_dialog_close(GObject *geany_object, GtkWidget *notebook, 
 
 static void on_project_open(GObject *geany_object, GKeyFile *config, SignalManager *man)
 {
+	(void)geany_object;	(void)config;
 	PyObject *py_proj = (PyObject *) GEANYPY_NEW(Project);
 	g_signal_emit_by_name(man->obj, "project-open", py_proj);
 	Py_XDECREF(py_proj);
@@ -227,6 +237,7 @@ static void on_project_open(GObject *geany_object, GKeyFile *config, SignalManag
 
 static void on_project_save(GObject *geany_object, GKeyFile *config, SignalManager *man)
 {
+	(void)geany_object;	(void)config;
 	PyObject *py_proj = (PyObject *) GEANYPY_NEW(Project);
 	g_signal_emit_by_name(man->obj, "project-save", py_proj);
 	Py_XDECREF(py_proj);
@@ -235,6 +246,7 @@ static void on_project_save(GObject *geany_object, GKeyFile *config, SignalManag
 
 static void on_update_editor_menu(GObject *geany_object, const gchar *word, gint pos, GeanyDocument *doc, SignalManager *man)
 {
+	(void)geany_object;
 	PyObject *py_doc = (PyObject *) Document_create_new_from_geany_document(doc);
 	g_signal_emit_by_name(man->obj, "update-editor-menu", word, pos, py_doc);
 	Py_XDECREF(py_doc);

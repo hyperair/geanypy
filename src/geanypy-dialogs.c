@@ -4,6 +4,7 @@
 static PyObject *
 Dialogs_show_input(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+    (void)self;
     const gchar *title=NULL, *label_text=NULL, *default_text=NULL, *result=NULL;
     PyObject *py_win_obj = NULL;
     PyGObject *py_win_gobj;
@@ -36,6 +37,7 @@ Dialogs_show_input(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject *
 Dialogs_show_input_numeric(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+    (void)self;
     const gchar *title=NULL, *label_text = NULL;
     gdouble value = 0.0, min = 0.0, max = 0.0, step = 0.0;
     static gchar *kwlist[] = { "title", "label_text", "value", "minimum",
@@ -61,6 +63,7 @@ Dialogs_show_input_numeric(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject *
 Dialogs_show_msgbox(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+    (void)self;
     gchar *text = NULL;
     gint msgtype = (gint) GTK_MESSAGE_INFO;
     static gchar *kwlist[] = { "text", "msgtype", NULL };
@@ -80,6 +83,7 @@ Dialogs_show_msgbox(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject *
 Dialogs_show_question(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+    (void)self;
     gchar *text = NULL;
     static gchar *kwlist[] = { "text", NULL };
 
@@ -100,6 +104,7 @@ Dialogs_show_question(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject *
 Dialogs_show_save_as(PyObject *self)
 {
+    (void)self;
     if (dialogs_show_save_as())
         Py_RETURN_TRUE;
     else

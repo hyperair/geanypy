@@ -12,6 +12,7 @@ Project_dealloc(Project *self)
 static int
 Project_init(Project *self, PyObject *args, PyObject *kwds)
 {
+	(void)args; (void)kwds;
 	g_return_val_if_fail(self != NULL, -1);
 	self->project = geany_data->app->project;
 	return 0;

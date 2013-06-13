@@ -11,6 +11,7 @@ Filetype_dealloc(Filetype *self)
 static int
 Filetype_init(Filetype *self, PyObject *args, PyObject *kwds)
 {
+	(void)args; (void)kwds;
 	self->ft = NULL;
 	return 0;
 }
@@ -149,6 +150,7 @@ static PyTypeObject FiletypeType = {
 static PyObject *
 Filetype_detect_from_file(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+	(void)self;
 	GeanyFiletype *ft;
 	gchar *filename = NULL;
 	static gchar *kwlist[] = { "filename", NULL };
@@ -169,6 +171,7 @@ Filetype_detect_from_file(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject *
 Filetype_get_sorted_by_name(PyObject *self)
 {
+	(void)self;
 	const GSList *glist, *iter;
 	PyObject *list;
 
@@ -190,6 +193,7 @@ Filetype_get_sorted_by_name(PyObject *self)
 static PyObject *
 Filetype_index(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+	(void)self;
 	GeanyFiletype *ft;
 	gint idx = -1;
 	static gchar *kwlist[] = { "index", NULL };
@@ -207,6 +211,7 @@ Filetype_index(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject *
 Filetype_lookup_by_name(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+	(void)self;
 	GeanyFiletype *ft;
 	gchar *filetype = NULL;
 	static gchar *kwlist[] = { "name", NULL };
@@ -224,6 +229,7 @@ Filetype_lookup_by_name(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject *
 Filetype_get_sorted_by_title(PyObject *self, PyObject *args)
 {
+	(void)self; (void)args;
 	const GSList *iter;
 	PyObject *list;
 

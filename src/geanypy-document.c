@@ -339,6 +339,7 @@ static PyTypeObject DocumentType = {
 static PyObject*
 Document_find_by_filename(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+	(void)self;
 	gchar *fn;
 	GeanyDocument *doc;
 	static gchar *kwlist[] = { "filename", NULL };
@@ -356,6 +357,7 @@ Document_find_by_filename(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject*
 Document_find_by_real_path(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+	(void)self;
 	gchar *fn;
 	GeanyDocument *doc;
 	static gchar *kwlist[] = { "real_path", NULL };
@@ -373,6 +375,7 @@ Document_find_by_real_path(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject*
 Document_get_current(PyObject *self)
 {
+	(void)self;
 	GeanyDocument *doc;
 
 	doc = document_get_current();
@@ -385,6 +388,7 @@ Document_get_current(PyObject *self)
 static PyObject*
 Document_get_from_page(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+	(void)self;
 	gint page_num;
 	GeanyDocument *doc;
 	static gchar *kwlist[] = { "page_num", NULL };
@@ -402,6 +406,7 @@ Document_get_from_page(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject*
 Document_get_from_index(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+	(void)self;
 	gint idx;
 	GeanyDocument *doc;
 	static gchar *kwlist[] = { "index", NULL };
@@ -419,6 +424,7 @@ Document_get_from_index(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject*
 Document_new_file(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+	(void)self;
 	gchar *filename = NULL, *initial_text = NULL;
 	Filetype *filetype = NULL;
 	PyObject *py_ft = NULL;
@@ -446,6 +452,7 @@ Document_new_file(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject*
 Document_open_file(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+	(void)self;
 	gint read_only = 0;
 	gchar *filename = NULL, *forced_encoding = NULL;
 	GeanyDocument *doc;
@@ -475,6 +482,7 @@ Document_open_file(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject*
 Document_remove_page(PyObject *self, PyObject *args, PyObject *kwargs)
 {
+	(void)self;
 	guint page_num;
 	static gchar *kwlist[] = { "page_num", NULL };
 
@@ -492,6 +500,7 @@ Document_remove_page(PyObject *self, PyObject *args, PyObject *kwargs)
 static PyObject *
 Document_get_documents_list(PyObject *module)
 {
+	(void)module;
 	guint i;
 	GeanyDocument *doc;
 	PyObject *list;

@@ -92,6 +92,7 @@ Encoding *Encoding_create_new_from_geany_encoding(GeanyEncoding *enc)
 static PyObject *
 Encodings_convert_to_utf8(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
     gchar *buffer = NULL, *used_encoding = NULL, *new_buffer = NULL;
     gssize size = -1; /* bug alert: this is gsize in Geany for some reason */
     PyObject *result;
@@ -116,6 +117,7 @@ Encodings_convert_to_utf8(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 Encodings_convert_to_utf8_from_charset(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
     gchar *buffer = NULL, *charset = NULL, *new_buffer = NULL;
     gssize size = -1;
     gint fast = 0;
@@ -141,6 +143,7 @@ Encodings_convert_to_utf8_from_charset(PyObject *module, PyObject *args, PyObjec
 static PyObject *
 Encodings_get_charset_from_index(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
     gint idx = 0;
     const gchar *charset = NULL;
     static gchar *kwlist[] = { "index", NULL };
@@ -248,6 +251,7 @@ static const gchar *encoding_names[] = {
 static PyObject *
 Encodings_get_list(PyObject *module)
 {
+	(void)module;
 	int i;
 	PyObject *list;
 	list = PyList_New(0);

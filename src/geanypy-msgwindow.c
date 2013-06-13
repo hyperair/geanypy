@@ -4,6 +4,7 @@
 static PyObject *
 Msgwin_clear_tab(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+    (void)module;
     gint tab_num = 0;
     static gchar *kwlist[] = { "tabnum", NULL };
 
@@ -17,6 +18,7 @@ Msgwin_clear_tab(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 Msgwin_compiler_add(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+    (void)module;
     gint msg_color = COLOR_BLACK;
     gchar *msg = NULL;
     static gchar *kwlist[] = { "msg", "msg_color", NULL };
@@ -31,6 +33,7 @@ Msgwin_compiler_add(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 Msgwin_msg_add(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+    (void)module;
     gint msg_color = COLOR_BLACK, line = -1;
     PyObject *obj = NULL;
     Document *py_doc = NULL;
@@ -58,6 +61,7 @@ Msgwin_msg_add(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 Msgwin_set_messages_dir(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+    (void)module;
     gchar *msgdir = NULL;
     static gchar *kwlist[] = { "messages_dir", NULL };
 
@@ -74,6 +78,7 @@ Msgwin_set_messages_dir(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 Msgwin_status_add(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+    (void)module;
     gchar *msg = NULL;
     static gchar *kwlist[] = { "msg", NULL };
 
@@ -90,6 +95,7 @@ Msgwin_status_add(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 Msgwin_switch_tab(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+    (void)module;
     gint tabnum = 0, show = 0;
 	static gchar *kwlist[] = { "tabnum", "show", NULL };
 

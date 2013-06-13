@@ -4,6 +4,7 @@
 static PyObject *
 Navqueue_goto_line(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	gint line = 1;
 	PyObject *py_old = NULL, *py_new = NULL;
 	Document *py_doc_old, *py_doc_new;

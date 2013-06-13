@@ -351,6 +351,7 @@ static PyTypeObject EditorType = {
 static PyObject *
 Editor__find_snippet(PyObject *module, PyObject *args, PyObject *kwargs)
 {
+	(void)module;
 	gchar *name;
 	const gchar *snippet;
 	static gchar *kwlist[] = { "snippet_name", NULL };
@@ -371,6 +372,7 @@ Editor__find_snippet(PyObject *module, PyObject *args, PyObject *kwargs)
 static PyObject *
 Editor_get_default_eol_char(PyObject *module)
 {
+	(void)module;
 	const gchar *eol_char = editor_get_eol_char(NULL);
 	if (eol_char != NULL)
 		return Py_BuildValue("s", eol_char);
@@ -381,6 +383,7 @@ Editor_get_default_eol_char(PyObject *module)
 static PyObject *
 Editor_get_default_eol_char_name(PyObject *module)
 {
+	(void)module;
 	const gchar *eol_char_name = editor_get_eol_char_name(NULL);
 	if (eol_char_name != NULL)
 		return Py_BuildValue("s", eol_char_name);
@@ -391,6 +394,7 @@ Editor_get_default_eol_char_name(PyObject *module)
 static PyObject *
 Editor_get_default_indent_prefs(PyObject *module)
 {
+	(void)module;
 	const GeanyIndentPrefs *indent_prefs;
 	IndentPrefs *py_prefs;
 	indent_prefs = editor_get_indent_prefs(NULL);

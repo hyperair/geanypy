@@ -12,6 +12,7 @@ Notification_dealloc(Notification *self)
 static int
 Notification_init(Notification *self, PyObject *args, PyObject *kwds)
 {
+	(void)kwds;	(void)args;
 	self->notif = NULL;
 	self->hdr = NULL;
 	return 0;
